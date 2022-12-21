@@ -1,11 +1,18 @@
 import React from 'react';
 import Button from '@components/Button';
+import PageDecorator from '@components/PageDecorator';
 
 function Home() {
   return (
     <div className="text-center">
-      <h1 className="text-4xl">Welcome to my pokedex application</h1>
-      <p className="mt-4 text-xl">
+      <h1 className="mb-8">
+        Welcome to
+        <br />
+        <span className="px-2 bg-rose-600/75">
+          my pokedex application
+        </span>
+      </h1>
+      <p className="text-xl">
         It was made using ReactJS and
         {' '}
         <a href="https://pokeapi.co/" className="underline">
@@ -19,24 +26,7 @@ function Home() {
         Click here
       </Button>
 
-      <div className="flex justify-center items-end mt-20">
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/132.gif"
-          alt="Pokemon 1"
-        />
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/62.gif"
-          alt="Pokemon 1"
-        />
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/12.gif"
-          alt="Pokemon 1"
-        />
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/82.gif"
-          alt="Pokemon 1"
-        />
-      </div>
+      <PageDecorator className="order-first mt-20" />
     </div>
   );
 }

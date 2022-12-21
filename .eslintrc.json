@@ -19,6 +19,11 @@
     "rules": {
         "import/no-extraneous-dependencies": "off",
         "react/prop-types": "off",
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off",
+        "no-console": "off",
+        "max-len": "off",
+        "no-plusplus": "off",
+        "no-param-reassign": "off"
     }
 }

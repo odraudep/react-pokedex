@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const classNames = (...classes) => classes.filter(Boolean).join(' ');
+import { classNames } from '@utils/propsFormatter';
 
 function Button({ className, to, children }) {
   return to ? (

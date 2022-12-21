@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-5xl font-light leading-tight;
+  }
+}
+
 @layer components {
   .btn {
     @apply inline-block font-medium py-2 px-4 rounded transition-colors;
@@ -10,4 +16,18 @@
   .btn--primary {
     @apply bg-rose-600 hover:bg-rose-700 focus:bg-rose-700;
   }
+}
+
+/* Custom page scrollbar */
+body::-webkit-scrollbar {
+  width: .25rem;
+  background-color: #fff;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #E11D48;
 }
