@@ -7,7 +7,7 @@ function App() {
     <div className="min-h-screen bg-slate-900 text-white">
       <Navbar />
 
-      <div className="container mx-auto">
+      <div className="container mt-8 mx-auto py-4 px-5 rounded shadow-lg bg-slate-800">
         <MainRoutes />
       </div>
     </div>

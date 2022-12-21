@@ -17,7 +17,7 @@ const menuItems = [
 function Navbar() {
   return (
     <header className="sticky top-0 shadow-lg bg-slate-900">
-      <nav className="container mx-auto py-6 px-4 flex items-center">
+      <nav className="container mx-auto py-6 px-5 flex items-center">
         <Link to="/">
           <img src={logo} alt="Logo ReactJS Pokedex App" width="42" />
         </Link>
