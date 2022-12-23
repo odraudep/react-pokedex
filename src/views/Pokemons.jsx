@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Pokemon from '@components/Pokemon';
+import PokemonItem from '@components/PokemonItem';
 
 function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
@@ -20,7 +20,7 @@ function Pokemons() {
 
       <ul className="grid min-[420px]:grid-cols-2 min-[520px]:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 min-[520px]:gap-4">
         {pokemons.map((pokemon) => (
-          <Pokemon key={pokemon.name} pokemonBase={pokemon} />
+          <PokemonItem key={pokemon.name} pokemonBase={pokemon} />
         ))}
       </ul>
     </div>

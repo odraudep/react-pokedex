@@ -16,11 +16,15 @@
   .btn--primary {
     @apply bg-rose-600 hover:bg-rose-700 focus:bg-rose-700;
   }
+
+  .btn--secondary {
+    @apply bg-blue-600 hover:bg-blue-700 focus:hover:bg-blue-700;
+  }
 }
 
 /* Custom page scrollbar */
 body::-webkit-scrollbar {
-  width: .25rem;
+  width: 0.25rem;
   background-color: #fff;
 }
 
@@ -29,5 +33,5 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #E11D48;
+  background-color: #e11d48;
 }
