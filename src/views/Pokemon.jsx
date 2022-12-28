@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Button from '@components/Button';
 import PokemonSolo from '@components/PokemonSolo';
 
@@ -42,7 +43,11 @@ function Pokemon() {
             ) : null}
           </div>
         </>
-      ) : null}
+      ) : (
+        <div className="w-20 lg:w-32 mx-auto mt-8">
+          <AiOutlineLoading3Quarters size="100%" className="animate-spin" />
+        </div>
+      )}
     </div>
   );
 }

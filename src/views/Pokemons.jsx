@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import PokemonItem from '@components/PokemonItem';
 
 function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
   const [nextPokemons, setNextPokemons] = useState();
+  const [isLoading, setIsLoading] = useState(true);
   const timeToFetchMorePokemons = useRef(null);
 
   useEffect(() => {
@@ -12,8 +14,8 @@ function Pokemons() {
       .get('/pokemon?limit=20&offset=0')
       .then((res) => {
         setPokemons(res.data.results);
-
         setNextPokemons(res.data.next);
+        setIsLoading(false);
       })
       .catch((err) => {
         throw err;
@@ -25,7 +27,8 @@ function Pokemons() {
       .get(nextPokemons)
       .then((res) => {
         setPokemons((prev) => [...prev, ...res.data.results]);
-        return setNextPokemons(res.data.next);
+        setNextPokemons(res.data.next);
+        return setIsLoading(false);
       })
       .catch((err) => {
         throw err;
@@ -41,6 +44,7 @@ function Pokemons() {
       const isScrollEnd = window.scrollY + window.innerHeight >= document.body.scrollHeight;
 
       if (isScrollEnd) {
+        setIsLoading(true);
         timeToFetchMorePokemons.current = setTimeout(fetchMorePokemons, 1000);
       }
     };
@@ -64,6 +68,12 @@ function Pokemons() {
           <PokemonItem key={pokemon.name} pokemonBase={pokemon} />
         ))}
       </ul>
+
+      {isLoading ? (
+        <div className="mt-14">
+          <AiOutlineLoading3Quarters size="4rem" className="animate-spin mx-auto" />
+        </div>
+      ) : null}
     </div>
   );
 }
